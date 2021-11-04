@@ -1,0 +1,224 @@
+:root {
+    --very-dark-gray-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    background-color: var(--light-grayish-blue);
+}
+
+.mobile-share-active, .desktop-share-active {
+    background-color: var(--very-dark-gray-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 0 0 15px 15px;
+}
+
+.mobile-share-active h2, .desktop-share-active h2 {
+    color: var(--desaturated-dark-blue);
+    letter-spacing: 5px;
+}
+
+.desktop-share-active {
+    position: absolute;
+    right: 320px;
+    top: 350px;
+    width: 200px;
+    height: 25px;
+    border-radius: 0;
+    padding: 10px;
+}
+
+.mobile-animation {
+    animation: mobile-fade 1s ease-in-out alternate;
+}
+
+.desktop-animation {
+    animation: rotate-in-up-left 4s ease;
+}
+
+@keyframes mobile-fade {
+    0% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+
+  @keyframes rotate-in-up-left {
+    0% {
+      transform-origin: left bottom;
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+    100% {
+      transform-origin: left bottom;
+      transform: rotate(0);
+      opacity: 1;
+    }
+  }
+
+@media screen and (min-width: 345px) and (max-width: 800px) {
+    .card {
+        border-radius: 15px;
+        width: 80%;
+        height: 480px;
+        margin: 10vh auto 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 45% 45% 10%;
+        background-color: white;
+    }
+
+    .card-image {
+        border-radius: 15px 15px 0 0;
+        background-image: url('./images/drawers.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 190px;
+    }
+
+    .card-body {
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    .card-heading {
+        font-weight: 700;
+        font-size: 1.3em;
+        color: var(--very-dark-gray-blue);
+        margin: 10px 0;
+    }
+
+    .sub-heading {
+        color: var(--desaturated-dark-blue);
+        font-size: .9em;
+        line-height: 1.7em;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+
+    .avatar {
+        border-radius: 50%;
+        width: 45px;
+    }
+
+    .profile {
+        margin-right: 20px;
+    }
+
+    .profile p {
+        color: var(--desaturated-dark-blue);
+    }
+
+    .profile h2 {
+        color: var(--very-dark-gray-blue);
+    }
+
+    .share-button button {
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        width: 30px;
+        height: 25px;
+    }
+
+}
+
+@media screen and (min-width: 801px) and (max-width: 1500px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .card {
+        border-radius: 15px;
+        width: 49%;
+        height: 290px;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        background-color: white;
+        overflow: hidden;
+    }
+
+    .card-image {
+        border-radius: 15px 0 0 15px;
+        background-image: url('./images/drawers.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .card-body {
+        margin-left: 20px;
+        margin-top: 20px;
+        padding-right: 40px;
+    }
+
+    .card-heading {
+        font-weight: 400;
+        font-size: 1.5em;
+        color: var(--very-dark-gray-blue);
+        margin: 10px 0;
+    }
+
+    .sub-heading {
+        color: var(--desaturated-dark-blue);
+        font-size: .91em;
+        line-height: 1.7em;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+
+    .avatar {
+        border-radius: 50%;
+        width: 45px;
+    }
+
+    .profile {
+        margin-right: 20px;
+    }
+
+    .profile p {
+        color: var(--desaturated-dark-blue);
+    }
+
+    .profile h2 {
+        color: var(--very-dark-gray-blue);
+    }
+
+    .share-button button {
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        width: 30px;
+        height: 25px;
+    }
+}
